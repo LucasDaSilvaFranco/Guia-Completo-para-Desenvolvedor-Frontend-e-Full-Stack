@@ -247,16 +247,17 @@
             }
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="pdf-content">
         <div class="header">
             <h1>🚀 Guia Completo para Desenvolvedor Frontend e Full Stack</h1>
             <p>Do Básico ao Avançado com Projetos Práticos</p>
         </div>
         
         <div class="content">
-            <button class="download-btn" onclick="window.print()">📥 Baixar como PDF</button>
+            <button class="download-btn" onclick="generatePDF()">📥 Baixar como PDF</button>
             
             <h2><span class="emoji">📌</span> Introdução</h2>
             <p>Este roteiro sistemático cobre desde fundamentos até tópicos avançados de desenvolvimento web, com cursos gratuitos de qualidade, projetos reais e cronograma otimizado para máximo aprendizado.</p>
@@ -485,5 +486,18 @@
             </style>
         </div>
     </div>
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('pdf-content');
+            const opt = {
+                margin:       0,
+                filename:     'guia-frontend-fullstack.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
 </body>
 </html>
