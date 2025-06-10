@@ -42,7 +42,7 @@ cd Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack
 ```
 
 ### 2. Usar via GitHub Pages
-Acesse diretamente: [https://lucasdasilvafranco.github.io/Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack](https://lucasdasilvafranco.github.io/Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack)
+Acesse diretamente: [https://lucasdasilvafranco.github.io/Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack](https://lucasdasilvafranco.github.io/Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack/)
 
 ### 3. Baixar como PDF
 1. Abra o arquivo HTML no navegador
