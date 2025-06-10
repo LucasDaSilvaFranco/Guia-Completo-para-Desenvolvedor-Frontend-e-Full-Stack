@@ -42,7 +42,7 @@ cd Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack
 ```
 
 ### 2. Usar via GitHub Pages
-Acesse diretamente: [https://lucasdasilvafranco.github.io/Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack](https://lucasdasilvafranco.github.io/Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack/)
+Acesse diretamente: [https://lucasdasilvafranco.github.io/Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack](https://lucasdasilvafranco.github.io/Guia-Completo-para-Desenvolvedor-Frontend-e-Full-Stack)
 
 ### 3. Baixar como PDF
 1. Abra o arquivo HTML no navegador
@@ -153,6 +153,15 @@ Sua contribuição é muito bem-vinda! Aqui estão algumas formas de contribuir:
 - [ ] Integração com GitHub para salvar progresso
 - [ ] Aplicativo mobile (PWA)
 - [ ] Sistema de badges/conquistas
+- [ ] Soft Skills e Carreira
+- [ ] Projetos Avançados
+- [ ] Desafios Semanais
+- [ ] FAQ
+- [ ] Mais Tecnologias
+- [ ] Comunidades e Mentorias
+- [ ] Roadmap Visual
+- [ ] Inspiração e Depoimentos
+- [ ] Checklist de Progresso
 
 ## 🏆 Hall da Fama
 
@@ -178,3 +187,59 @@ Pessoas que usaram este guia e conseguiram oportunidades:
 **⭐ Se este guia te ajudou, deixe uma estrela no repositório!**
 
 **🚀 Vamos codar juntos e transformar vidas através da programação!**
+
+## 🧠 Soft Skills e Carreira
+
+- Comunicação eficaz e trabalho em equipe
+- Preparação para entrevistas técnicas
+- Como criar um currículo de desenvolvedor
+- Networking e presença no LinkedIn
+- Como montar um portfólio atrativo
+
+## 🚀 Projetos Avançados Sugeridos
+
+- Dashboard com gráficos (Chart.js, D3.js)
+- Blog com comentários (backend simples)
+- E-commerce fictício (carrinho, autenticação)
+- Aplicativo de chat em tempo real (WebSocket)
+
+## 💡 Desafios Semanais
+
+- Mini-projetos e desafios de código para cada etapa do cronograma
+- Exemplo: "Crie uma landing page responsiva", "Consuma uma API pública e exiba dados"
+
+## ❓ FAQ - Perguntas Frequentes
+
+- Preciso saber inglês? R: Ajuda muito, mas é possível começar sem.
+- Como conseguir o primeiro estágio? R: Foque em projetos práticos e networking.
+- Como montar um portfólio? R: Use GitHub Pages, mostre projetos reais e explique o que aprendeu.
+
+## 🛠️ Mais Tecnologias e Tópicos
+
+- TypeScript, Next.js, Vue.js, SASS, Docker, CI/CD, Testes automatizados, GraphQL, Firebase
+
+## 🌐 Comunidades e Mentorias
+
+- [Rocketseat Discord](https://discord.gg/rocketseat)
+- [Front-end Brasil](https://github.com/frontendbr)
+- [Stack Overflow](https://stackoverflow.com/)
+- [Dev.to](https://dev.to/)
+
+## 🗺️ Roadmap Visual
+
+- Use [roadmap.sh](https://roadmap.sh/frontend) para um caminho visual interativo
+- Ferramentas como [Mermaid.js](https://mermaid-js.github.io/) para diagramas
+
+## ✨ Inspiração e Depoimentos
+
+- Depoimentos de quem conseguiu emprego usando o guia (mande o seu!)
+- Links para vídeos motivacionais e histórias de sucesso
+
+## ✅ Checklist de Progresso
+
+- Use o [Notion](https://notion.so/) ou [Trello](https://trello.com/) para marcar etapas concluídas
+- Em breve: checklist interativo no próprio guia!
+
+## 🌍 Tradução
+
+- Versão em inglês em desenvolvimento para alcançar mais pessoas
