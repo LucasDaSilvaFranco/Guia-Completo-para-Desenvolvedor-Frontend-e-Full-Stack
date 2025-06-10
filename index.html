@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo para Desenvolvedor Frontend e Full Stack</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-100px) translateY(-100px); }
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        h2 {
+            color: #4c51bf;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        
+        strong {
+            color: #4c51bf;
+            font-weight: 600;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .schedule-table th,
+        .schedule-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .schedule-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        
+        .schedule-table tr:hover {
+            background-color: #edf2f7;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #f0fff4 0%, #f0f9ff 100%);
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .project-item {
+            background: linear-gradient(135deg, #fef5e7 0%, #f0fff4 100%);
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border-left: 4px solid #ed8936;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checkmark {
+            color: #48bb78;
+            font-weight: bold;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .resource-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-card h4 {
+            color: #4c51bf;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(72, 187, 120, 0.4);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .download-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Guia Completo para Desenvolvedor Frontend e Full Stack</h1>
+            <p>Do Básico ao Avançado com Projetos Práticos</p>
+        </div>
+        
+        <div class="content">
+            <button class="download-btn" onclick="window.print()">📥 Baixar como PDF</button>
+            
+            <h2><span class="emoji">📌</span> Introdução</h2>
+            <p>Este roteiro sistemático cobre desde fundamentos até tópicos avançados de desenvolvimento web, com cursos gratuitos de qualidade, projetos reais e cronograma otimizado para máximo aprendizado.</p>
+            
+            <h2><span class="emoji">📚</span> Etapas de Estudo</h2>
+            
+            <h3><span class="emoji">🔢</span> Fundamentos da Programação</h3>
+            <ul>
+                <li><strong>Lógica de Programação</strong>:
+                    <ul>
+                        <li><a href="https://www.cursoemvideo.com/" target="_blank">Curso em Vídeo (Gustavo Guanabara)</a></li>
+                        <li><a href="https://www.codecademy.com/learn/learn-how-to-code" target="_blank">Codecademy - Introdução à Programação</a></li>
+                        <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp - Algoritmos e Estruturas de Dados</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3><span class="emoji">🎨</span> Frontend Essencial (HTML5 + CSS3 + UI Design)</h3>
+            <ul>
+                <li><strong>HTML/CSS Básico ao Intermediário</strong>:
+                    <ul>
+                        <li>Módulos 1 a 3 do <a href="https://www.cursoemvideo.com/" target="_blank">Curso em Vídeo</a></li>
+                        <li><a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank">freeCodeCamp - Web Design Responsivo</a></li>
+                    </ul>
+                </li>
+                <li><strong>Layouts Modernos</strong>:
+                    <ul>
+                        <li><a href="https://www.origamid.com/" target="_blank">Flexbox (Origamid)</a></li>
+                        <li><a href="https://cssgrid.io/" target="_blank">CSS Grid (Wes Bos)</a></li>
+                        <li><a href="https://www.edx.org/learn/web-design" target="_blank">edX - Cursos de UI/UX Design</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3><span class="emoji">⚡</span> JavaScript (Do Básico ao ES6+)</h3>
+            <ul>
+                <li><strong>JavaScript Básico</strong>:
+                    <ul>
+                        <li><a href="https://www.cursoemvideo.com/" target="_blank">Curso em Vídeo</a></li>
+                        <li><a href="https://javascript.info/" target="_blank">JavaScript.info - Tutorial Completo</a></li>
+                    </ul>
+                </li>
+                <li><strong>JavaScript Moderno</strong>:
+                    <ul>
+                        <li><a href="https://cfbcursos.com.br/" target="_blank">ES6+ (CFBCursos)</a></li>
+                        <li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank">freeCodeCamp - JavaScript ES6</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3><span class="emoji">⚛️</span> Frameworks Frontend</h3>
+            <ul>
+                <li><strong>React.js</strong>:
+                    <ul>
+                        <li><a href="https://react.dev/learn" target="_blank">React.dev - Documentação Oficial</a></li>
+                        <li><a href="https://horadecodar.com.br/" target="_blank">Hora de Codar</a></li>
+                        <li><a href="https://www.freecodecamp.org/learn/front-end-development-libraries/" target="_blank">freeCodeCamp - Bibliotecas Frontend</a></li>
+                    </ul>
+                </li>
+                <li><strong>TailwindCSS</strong>:
+                    <ul>
+                        <li><a href="https://tailwindcss.com/docs" target="_blank">Documentação Oficial TailwindCSS</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=UBOj6rqRUME" target="_blank">Traversy Media - TailwindCSS Crash Course</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3><span class="emoji">🛠️</span> Ferramentas Profissionais</h3>
+            <ul>
+                <li><strong>Controle de Versão</strong>:
+                    <ul>
+                        <li><a href="https://www.cursoemvideo.com/" target="_blank">Git e GitHub (Curso em Vídeo)</a></li>
+                        <li><a href="https://learngitbranching.js.org/" target="_blank">Learn Git Branching (Interativo)</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3><span class="emoji">💼</span> Projetos Práticos</h3>
+            <p>Aplique seus conhecimentos com projetos reais:</p>
+            <div class="project-item">
+                <span class="checkmark">✅</span>
+                <strong>Portfólio Pessoal</strong> (HTML + CSS + JS)
+            </div>
+            <div class="project-item">
+                <span class="checkmark">✅</span>
+                <strong>Clone do Netflix/Instagram</strong> (React)
+            </div>
+            <div class="project-item">
+                <span class="checkmark">✅</span>
+                <strong>App de Clima</strong> (API + JavaScript)
+            </div>
+            <div class="project-item">
+                <span class="checkmark">✅</span>
+                <strong>To-Do List Interativa</strong> (LocalStorage)
+            </div>
+            
+            <h3><span class="emoji">🔧</span> Full Stack (Backend + Banco de Dados)</h3>
+            <ul>
+                <li><strong>Node.js</strong>:
+                    <ul>
+                        <li><a href="https://nodejs.org/en/learn/" target="_blank">Node.js - Documentação Oficial</a></li>
+                        <li><a href="https://www.freecodecamp.org/learn/back-end-development-and-apis/" target="_blank">freeCodeCamp - APIs e Backend</a></li>
+                    </ul>
+                </li>
+                <li><strong>MySQL</strong>: <a href="https://www.cursoemvideo.com/" target="_blank">Curso em Vídeo</a></li>
+                <li><strong>APIs REST</strong>:
+                    <ul>
+                        <li><a href="https://restfulapi.net/" target="_blank">RESTful API Tutorial</a></li>
+                        <li><a href="https://www.postman.com/postman/workspace/postman-answers/documentation/13455110-af668c5b-dcfb-4ee0-b802-0c4c08cdc88a" target="_blank">Postman Learning Center</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3><span class="emoji">🎯</span> Tópicos Extras</h3>
+            <ul>
+                <li><strong>Testes de Software</strong>:
+                    <ul>
+                        <li><a href="https://jestjs.io/docs/getting-started" target="_blank">Jest - Documentação</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/testing-react-hooks/" target="_blank">freeCodeCamp - Testes em React</a></li>
+                    </ul>
+                </li>
+                <li><strong>Soft Skills</strong>: Comunicação e Gestão Ágil
+                    <ul>
+                        <li><a href="https://www.coursera.org/learn/scrum" target="_blank">Coursera - Metodologias Ágeis</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h2><span class="emoji">🗓️</span> Cronograma Semanal (2-3h/dia)</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Foco Principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Segunda</strong></td>
+                        <td>HTML/CSS + Exercícios Práticos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Terça</strong></td>
+                        <td>Flexbox/Grid + Mini-Projetos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quarta</strong></td>
+                        <td>JavaScript Básico</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quinta</strong></td>
+                        <td>JS ES6+ (Arrays, Funções)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sexta</strong></td>
+                        <td>Git/GitHub + Publicar Projetos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sábado</strong></td>
+                        <td>React.js (Documentação ou Hora de Codar)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Domingo</strong></td>
+                        <td>Revisão ou Projeto Livre</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2><span class="emoji">💡</span> Dicas Cruciais</h2>
+            <div class="tip-box">
+                <ul>
+                    <li><strong>GitHub Ativo</strong>: Comente códigos e atualize semanalmente</li>
+                    <li><strong>LinkedIn</strong>: Documente jornada e conecte-se com recrutadores</li>
+                    <li><strong>Comunidades</strong>: Participe de fóruns (Dev.to, Stack Overflow)</li>
+                    <li><strong>Consistência</strong>: 30 minutos/dia > 8h esporádicas</li>
+                </ul>
+            </div>
+            
+            <h2><span class="emoji">🎯</span> Bônus: Recursos Extras</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h4>🛠️ Ferramentas</h4>
+                    <ul>
+                        <li><a href="https://www.figma.com/" target="_blank">Figma (UI)</a></li>
+                        <li><a href="https://code.visualstudio.com/" target="_blank">VSCode</a></li>
+                        <li><a href="https://trello.com/" target="_blank">Trello</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h4>🔌 APIs Públicas</h4>
+                    <ul>
+                        <li><a href="https://openweathermap.org/api" target="_blank">OpenWeather</a></li>
+                        <li><a href="https://jsonplaceholder.typicode.com/" target="_blank">JSONPlaceholder</a></li>
+                        <li><a href="https://public-apis.io/" target="_blank">Public APIs</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h4>✨ Inspiração</h4>
+                    <ul>
+                        <li><a href="https://dribbble.com/" target="_blank">Dribbble (design)</a></li>
+                        <li><a href="https://codepen.io/" target="_blank">CodePen (códigos)</a></li>
+                        <li><a href="https://awwwards.com/" target="_blank">Awwwards</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2><span class="emoji">🔗</span> Links Úteis</h2>
+            <ul>
+                <li><a href="https://github.com/" target="_blank">Modelo de Portfólio no GitHub</a></li>
+                <li><a href="https://roadmap.sh/frontend" target="_blank">Roadmap.sh - Frontend Developer</a></li>
+                <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p><strong>✨ Pronto para transformar seu aprendizado em carreira? ✨</strong></p>
+            <p style="margin-top: 10px; opacity: 0.8;">Créditos: Lucas Franco - Dev Full Stack</p>
+        </div>
+    </div>
+</body>
+</html>
